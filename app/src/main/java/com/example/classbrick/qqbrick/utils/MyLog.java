@@ -1,5 +1,6 @@
 package com.example.classbrick.qqbrick.utils;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -42,11 +43,11 @@ public class MyLog {
         }
     }
 
-    public static void showToast(final String Msg){
+    public static void showToast(final Context context, final String Msg){
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(Application.getGlobalContext(), Msg, Toast.LENGTH_SHORT);
+                Toast.makeText(context, Msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

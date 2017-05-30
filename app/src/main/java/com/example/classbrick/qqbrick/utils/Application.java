@@ -11,9 +11,14 @@ public class Application extends android.app.Application {
 
     private static Context context = null;
 
+    @Override
+    public void attachBaseContext(Context mContext){
+        context = getApplicationContext();
+    }
+
     public void onCreate(){
         super.onCreate();
-        this.context = getApplicationContext();
+        //context = getApplicationContext();
     }
 
     public static Context getGlobalContext(){
